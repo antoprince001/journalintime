@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Ideas</title>
+    <title>Current news</title>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -56,9 +56,34 @@ input[type=text]:focus {
 <body>
     <a href="/dashboard"><button class="btn" style="float: left;" ><i class="fa fa-arrow-left"></i>   Back&nbsp;</button></a>
     <br><br>
-    <center><i><strong> <b><h1 style="font-weight: 700; text-shadow: 4px 4px black; color: white">Project Ideas</h1></b></strong></i></center>
+    <center><i><strong> <b><h1 style="font-weight: 700; text-shadow: 4px 4px black; color: white">Current News</h1></b></strong></i>
+    <br><br>
+    <form action="news">
+      <input name="find" id="find" type="text" placeholder="    Enter what you want to know about !    ">  
+      <input type="submit" value="Find">
+      <img src="/assets/send.svg" width="4%" height="4%">
+    </form>
+     <p id="demo"></p>
 
+     <div class="news">
+      <% for ( var i = 0; i < news.articles.length; i++){ var datum=news.articles[i]; %> 
+      <%= datum %>
+        
+     <div class="card" style="width: 40rem;">
+      <img class="card-img-top" src="<%= datum.urlToImage %>" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= datum.title %></h5>
+        <p class="card-text"><%= datum.description %></p>
+        <a href="<%= datum.url %>" class="btn btn-primary">View more</a>
+      </div>
+    </div>
 
+    <% } %>
     
+    <br><br>
+
+    </div>
+  </center>
+  
 </body>
 </html>

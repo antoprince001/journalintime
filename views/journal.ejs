@@ -44,6 +44,25 @@
     <a href="/addentry"><button class="btn" style="float: right;padding-right: 100px;"><i class="fa fa-plus circle"></i> Add New Entry&nbsp;</button></a>
 
     <br><br>
-    <center><h1 style="color:white;font-weight: 400;text-shadow: 4px 4px black;"> My Entries&nbsp;</h1></center>
+    <center><h1 style="color:white;font-weight: 400;text-shadow: 4px 4px black;"> My Entries&nbsp;</h1>
+    
+      <% for ( var i = 0; i < journal.length; i++){ var datum=journal[i]; %> 
+        <br><br>
+        <form action="/deleteEntry" method="post">
+        <div class="card col-6">
+          <div class="card-header">
+            <%= datum.journalTitle %>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= datum.dateOfEntry %></h5>
+            <p class="card-text"><%= datum.journalDesc %></p>
+            <input type="hidden" name="id" value=<%= datum._id %> >
+            <button type="submit" class="btn btn-primary">Delete</a>
+          </div>
+        </div>
+      </form>
+
+      <% } %>
+    </center>
     </body>
 </html> 
