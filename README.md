@@ -20,5 +20,5 @@ Inside project folder , via cmd run the follwing commands
 
    * npm install
    
-   * node server.js
+   * node app.js
 
