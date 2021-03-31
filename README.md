@@ -22,3 +22,4 @@ Inside project folder , via cmd run the follwing commands
    
    * node app.js
 
+Application will run at http://localhost:3000/
