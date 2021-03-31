@@ -2,13 +2,13 @@ var express = require('express');
 var bodyParser= require('body-parser')
 //var urlencoderparser=bodyparser.urlencoded({ extended : false });
 const mongoose =require('mongoose');
-const uri = "<Insert mongo url>";
+const uri = ""mongodb+srv://anto:anto@cluster0-y2p9h.mongodb.net/test?retryWrites=true&w=majority"";
 const Journal = require('./models/journalSchema');
 const Task = require('./models/taskSchema');
 
 var app= express();
 const NewsAPI = require('newsapi');
-const newsapi = new NewsAPI('<insert newsapi key>');
+const newsapi = new NewsAPI('01dd9bdbb831421da729c605300ec9e2');
 
 
 app.use('/assets',express.static('assets'));
